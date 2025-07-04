@@ -269,9 +269,7 @@ export default function HomePage() {
             </div>
             <div className="flex flex-col items-center md:items-end">
               <span className="text-xs font-light uppercase tracking-widest text-pink-300 mb-4 block">Contact</span>
-              <a href="mailto:admin@naviahub.dev" className="text-xl font-medium hover:text-pink-300 transition-colors">
-                admin@naviahub.dev
-              </a>
+              <p className="text-gray-500">Email: <span className="text-gray-500">admin@naviahub.dev</span></p>
             </div>
           </div>
           

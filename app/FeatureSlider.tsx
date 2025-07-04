@@ -1,7 +1,19 @@
 "use client";
 import React, { useState } from "react";
 
-export default function FeatureSlider({ features }) {
+type Feature = {
+  title: string;
+  desc: string;
+  img: string;
+  quote: string;
+  stat: string;
+};
+
+interface FeatureSliderProps {
+  features: Feature[];
+}
+
+export default function FeatureSlider({ features }: FeatureSliderProps) {
   const [featureIdx, setFeatureIdx] = useState(0);
   const nextFeature = () => setFeatureIdx((featureIdx + 1) % features.length);
   const prevFeature = () => setFeatureIdx((featureIdx - 1 + features.length) % features.length);
