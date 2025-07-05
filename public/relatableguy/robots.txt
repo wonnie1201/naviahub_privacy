@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://relatableguy.naviahub.dev
+
+# Sitemaps
+Sitemap: https://relatableguy.naviahub.dev/sitemap.xml
