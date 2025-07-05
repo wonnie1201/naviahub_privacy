@@ -27,6 +27,14 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32-pinkarrow.png" />
+        {/* Google Ads */}
+        <script
+     async
+     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7589895539093556"
+     crossOrigin="anonymous"
+   >
+
+   </script>
         <meta name="robots" content="index, follow" />
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJZ6BDDVFM"></script>
