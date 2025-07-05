@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://naviahub.dev
+
+# Sitemaps
+Sitemap: https://naviahub.dev/sitemap.xml

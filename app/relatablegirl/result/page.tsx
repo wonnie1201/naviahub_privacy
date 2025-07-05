@@ -4,62 +4,62 @@ import { useRouter } from "next/navigation";
 import Confetti from "react-confetti";
 
 const RESULTS = [
-  { type: "The Comedian", emoji: "🤣", percent: "Top 4%" },
-  { type: "The Rusher", emoji: "🚀", percent: "Top 10%" },
-  { type: "The Strategist", emoji: "🧠", percent: "Top 20%" },
-  { type: "The Observer", emoji: "👀", percent: "Top 30%" },
-  { type: "The Simp", emoji: "🥲", percent: "Top 50%" },
-  { type: "The Ghost", emoji: "👻", percent: "Top 80%" },
+  { type: "The Overthinker", emoji: "🙈", percent: "Top 4%" },
+  { type: "The Group Chat Queen", emoji: "💬", percent: "Top 10%" },
+  { type: "The Outfit Planner", emoji: "👗", percent: "Top 20%" },
+  { type: "The Meme Sender", emoji: "🤪", percent: "Top 30%" },
+  { type: "The Chill Queen", emoji: "😎", percent: "Top 50%" },
+  { type: "The Secret Romantic", emoji: "💖", percent: "Top 80%" },
 ];
 
 const PRAISES: Record<string, string> = {
-  "Top 4%": "Legendary! You're the rarest meme lord. Everyone wants you in their group chat.",
-  "Top 10%": "Certified MVP! You're the guy everyone screenshots for advice.",
-  "Top 20%": "Elite! Your meme game is strong. People wish they could be you.",
-  "Top 30%": "Not bad! But you're still lurking in the group chat, aren't you?",
-  "Top 50%": "Classic. You're the average meme enjoyer. Maybe try shooting your shot next time?",
-  "Top 80%": "Bruh… You're basically a ghost. Your friends are still waiting for your reply.",
+  "Top 4%": "You and your bestie could write a thesis on his every text. But hey, at least you’ll never miss a red flag!",
+  "Top 10%": "Your group chat is basically a 24/7 dating analysis lab. No move goes unreviewed. Your friends are lucky to have you as their meme supplier!",
+  "Top 20%": "You treat every date like a runway show. Fashion is your love language, and you always show up looking iconic!",
+  "Top 30%": "Why use words when memes say it all? You keep the vibe fun and everyone on their toes. The group chat lives for your energy!",
+  "Top 50%": "You act chill, but your phone’s screen time says otherwise. Effortlessly cool on the outside, softie on the inside!",
+  "Top 80%": "You play it cool, but your heart is pure poetry. When you fall, you fall hard—and that’s your secret superpower!",
 };
 
 // 18문항, 4지선다, 6개 유형 인덱스(0~5)
-// 0: Comedian, 1: Rusher, 2: Strategist, 3: Observer, 4: Simp, 5: Ghost
+
 const TYPE_MAP = [
   // Q1
-  [3, 0, 5, 4],
+  [4, 1, 0, 5],
   // Q2
-  [2, 0, 5, 4],
+  [0, 1, 2, 4],
   // Q3
-  [3, 1, 4, 5],
+  [1, 4, 5, 3],
   // Q4
-  [5, 2, 0, 3],
+  [3, 0, 2, 4],
   // Q5
-  [3, 4, 2, 5],
+  [0, 3, 5, 2],
   // Q6
-  [1, 4, 0, 2],
+  [5, 4, 1, 2],
   // Q7
-  [0, 5, 3, 4],
+  [1, 5, 4, 0],
   // Q8
-  [1, 4, 2, 0],
+  [5, 4, 3, 2],
   // Q9
-  [3, 2, 0, 5],
+  [0, 4, 1, 2],
   // Q10
-  [4, 1, 5, 2],
+  [0, 4, 5, 5],
   // Q11
-  [0, 3, 4, 1],
+  [1, 0, 2, 4],
   // Q12
-  [2, 5, 1, 0],
+  [5, 3, 2, 4],
   // Q13
-  [4, 1, 3, 5],
+  [1, 4, 0, 5],
   // Q14
-  [0, 2, 5, 3],
-  // Q15
   [1, 0, 4, 2],
+  // Q15
+  [5, 2, 3, 4],
   // Q16
-  [5, 3, 0, 1],
-  // Q17
-  [2, 4, 1, 5],
-  // Q18
   [3, 5, 0, 4],
+  // Q17
+  [2, 1, 4, 0],
+  // Q18
+  [4, 5, 1, 0],
 ];
 
 function getResultFromAnswers(answers: any) {
@@ -98,7 +98,7 @@ export default function ResultPage() {
   const handleRetake = () => {
     if (typeof window !== "undefined") {
       localStorage.setItem("test-answers", JSON.stringify(Array(18).fill(null)));
-      router.push("/relatableguy/test/1");
+      router.push("/relatablegirl/test/1");
     }
   };
 
@@ -111,25 +111,25 @@ export default function ResultPage() {
     let shareText = "";
     switch (result.percent) {
       case "Top 4%":
-        shareText = `I just got "${result.type}" ${result.emoji} (${result.percent}) on the Meme Dating Test.\nCertified meme lord. Bow before me. 😂🔥\nBet you can't top this. Prove me wrong 👉 https://naviahub.dev/relatableguy/`;
+        shareText = `I just got "${result.type}" ${result.emoji} (${result.percent}) on the Meme Girl Dating Test!\nApparently, I can overthink for a living. Can you relate? 🙈\nTry to beat my score 👉 https://naviahub.dev/relatablegirl/`;
         break;
       case "Top 10%":
-        shareText = `I just got "${result.type}" ${result.emoji} (${result.percent}) on the Meme Dating Test.\nElite meme game only. Are you even on my level? 😎\nTry to beat me 👉 https://naviahub.dev/relatableguy/`;
+        shareText = `I just got "${result.type}" ${result.emoji} (${result.percent}) on the Meme Girl Dating Test!\nGroup chat is my second home. Who's with me? 💬\nThink you can top this? 👉 https://naviahub.dev/relatablegirl/`;
         break;
       case "Top 20%":
-        shareText = `I just got "${result.type}" ${result.emoji} (${result.percent}) on the Meme Dating Test.\nNot quite a legend, but still a meme boss. 😂\nThink you can do better? 👉 https://naviahub.dev/relatableguy/`;
+        shareText = `I just got "${result.type}" ${result.emoji} (${result.percent}) on the Meme Girl Dating Test!\nEvery date is a runway show for me. 👗\nCan you out-style me? 👉 https://naviahub.dev/relatablegirl/`;
         break;
       case "Top 30%":
-        shareText = `I just got "${result.type}" ${result.emoji} (${result.percent}) on the Meme Dating Test.\nGuess I'm just lurking in the meme world... 👀\nRoast me or try to beat my score 👉 https://naviahub.dev/relatableguy/`;
+        shareText = `I just got "${result.type}" ${result.emoji} (${result.percent}) on the Meme Girl Dating Test!\nWhy talk when you can meme? 🤪\nBet you can't meme harder! 👉 https://naviahub.dev/relatablegirl/`;
         break;
       case "Top 50%":
-        shareText = `I just got "${result.type}" ${result.emoji} (${result.percent}) on the Meme Dating Test.\nClassic. I'm the average meme enjoyer. Maybe next time I'll go viral? 🥲\nThink you can flex harder? 👉 https://naviahub.dev/relatableguy/`;
+        shareText = `I just got "${result.type}" ${result.emoji} (${result.percent}) on the Meme Girl Dating Test!\nChill on the outside, softie on the inside. 😎\nAre you as chill as me? 👉 https://naviahub.dev/relatablegirl/`;
         break;
       case "Top 80%":
-        shareText = `I just got "${result.type}" ${result.emoji} (${result.percent}) on the Meme Dating Test.\nBruh... I'm basically a meme ghost. My friends are still waiting for my reply. 👻\nCan you do any worse? Try it 👉 https://naviahub.dev/relatableguy/`;
+        shareText = `I just got "${result.type}" ${result.emoji} (${result.percent}) on the Meme Girl Dating Test!\nSecret romantic alert! 💖\nCan you get more poetic than me? 👉 https://naviahub.dev/relatablegirl/`;
         break;
       default:
-        shareText = `I just got "${result.type}" ${result.emoji} (${result.percent}) on the Meme Dating Test!\nhttps://naviahub.dev/relatableguy/`;
+        shareText = `I just got "${result.type}" ${result.emoji} (${result.percent}) on the Meme Girl Dating Test!\nhttps://naviahub.dev/relatablegirl/`;
     }
 
     if (typeof window !== "undefined" && navigator.clipboard) {

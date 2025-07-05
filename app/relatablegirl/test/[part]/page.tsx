@@ -7,207 +7,207 @@ const PINK_HOVER = "#ffc6e0";
 const PINK_BORDER = "#ffb6d5";
 
 const PARTS = [
-  [ // 1~6번
+  [ // 1~6번 (Dating Situations)
     {
       section: "Dating Meme Situation",
-      question: "First date, your date is 10 minutes late. What do you do?",
-      example: "First meeting, your date shows up 10 minutes late.",
+      question: "He replies after 3 hours. What do you do?",
+      example: "You text him, and he replies 3 hours later.",
       options: [
-        { text: "No worries, I just got here too. (lying)", emoji: "😎" },
-        { text: "Should've been late too, lol.", emoji: "😏" },
-        { text: "Just scrolling my phone, pretending to be chill.", emoji: "📱" },
-        { text: "Already want to go home... but gotta act cool.", emoji: "😑" },
+        { text: "Wait another 3 hours to reply. Gotta play the game.", emoji: "⏰" },
+        { text: "Screenshot and send to the group chat: 'What does this mean?!'", emoji: "📸" },
+        { text: "Act chill, but check my phone every 5 minutes.", emoji: "😎" },
+        { text: "Just go to sleep. If he wants me, he'll text again.", emoji: "😴" },
       ],
     },
     {
       section: "Dating Meme Situation",
-      question: "Your crush replies to your DM after 3 hours. What's your move?",
-      example: "You sent a DM to your crush, and they reply 3 hours later.",
+      question: "You see him liking another girl's post. Your move?",
+      example: "He likes another girl's Instagram post.",
       options: [
-        { text: "Pride mode ON. I'll reply after 3 hours too.", emoji: "🕒" },
-        { text: "Screenshot and drop it in the group chat: 'bruh, is this for real?'", emoji: "📸" },
-        { text: "Act cool, but later cringe in bed at 3am.", emoji: "🛌" },
-        { text: "Welp, it's over. Time to escape into gaming.", emoji: "🎮" },
+        { text: "Pretend not to care, but stalk her profile.", emoji: "🕵️‍♀️" },
+        { text: "Send it to my bestie: 'Who is she?!'", emoji: "🙈" },
+        { text: "Like his post right after, just to remind him.", emoji: "💅" },
+        { text: "Mute him for a day. That'll show him.", emoji: "🙄" },
       ],
     },
     {
       section: "Dating Meme Situation",
-      question: "Your friend confesses they like your crush. What now?",
-      example: "Your close friend says they like the person you have a crush on.",
+      question: "He cancels your date last minute. What now?",
+      example: "He texts you an hour before the date to cancel.",
       options: [
-        { text: "Play it cool: 'Oh, nice~' but dying inside.", emoji: "😬" },
-        { text: "Rival mode ON. 'This means war.'", emoji: "⚔️" },
-        { text: "Pretend I don't care, but I care a LOT.", emoji: "😶" },
-        { text: "Secretly jealous, but never show it.", emoji: "😒" },
+        { text: "Say it's fine, but rant to my friends.", emoji: "📱" },
+        { text: "Instantly make other plans. My time is precious.", emoji: "👑" },
+        { text: "Act unbothered, but feel a little sad.", emoji: "🥲" },
+        { text: "Order takeout and binge Netflix.", emoji: "🍕📺" },
       ],
     },
     {
       section: "Dating Meme Situation",
-      question: "Your date suddenly brings up their ex. How do you react?",
-      example: "During a date, your date suddenly starts talking about their ex.",
-      options: [
-        { text: "Pretend it's nothing, but my brain is melting.", emoji: "😳" },
-        { text: "If it gets awkward, sip my drink.", emoji: "🥤" },
-        { text: "Bring up my own ex for revenge.", emoji: "🔥" },
-        { text: "'Ah~' and quickly change the subject.", emoji: "💨" },
-      ],
-    },
-    {
-      section: "Dating Meme Situation",
-      question: "They say, 'I just want to be alone for a while.' What do you do?",
-      example: "They suddenly say they want to be alone for a while.",
-      options: [
-        { text: "Actually give them space. Gotta act like a chill guy.", emoji: "🕶️" },
-        { text: "Panic and ask my bro, 'Did I just get dumped?'", emoji: "📱" },
-        { text: "Say 'okay~' but keep overthinking it.", emoji: "🤔" },
-        { text: "Open a dating app immediately, lol.", emoji: "📲" },
-      ],
-    },
-    {
-      section: "Dating Meme Situation",
-      question: "You match with someone super hot on a dating app. What's your move?",
-      example: "You matched with someone super attractive on a dating app.",
-      options: [
-        { text: "Smash the like button first, ask questions later.", emoji: "❤️" },
-        { text: "Stare at the chat for 10 minutes, then chicken out.", emoji: "😅" },
-        { text: "Brag to my friends + ask, 'is this even real?'", emoji: "🤨" },
-        { text: "Google them to check if it's a fake account.", emoji: "🔍" },
-      ],
-    },
-  ],
-  [ // 7~12번
-    {
-      section: "Dating Meme Situation",
-      question: "Awkward silence during a date. What do you do?",
+      question: "Awkward silence on a date. What do you do?",
       example: "Suddenly, the conversation stops and there's an awkward silence on your date.",
       options: [
         { text: "Try to break the ice, but make it even more awkward.", emoji: "😬" },
-        { text: "Just scroll my phone and wait it out.", emoji: "📱" },
-        { text: "Wait for them to say something first.", emoji: "⏳" },
-        { text: "Just hope it ends soon.", emoji: "😑" },
+        { text: "Check my phone and hope he says something.", emoji: "📱" },
+        { text: "Ask a random question about his childhood.", emoji: "🍼" },
+        { text: "Just smile and sip my drink.", emoji: "🥤" },
       ],
     },
     {
       section: "Dating Meme Situation",
-      question: "They cancel your date last minute. What's your move?",
-      example: "The day you were looking forward to, they text that they're too tired to meet.",
+      question: "He posts a cryptic story. Your reaction?",
+      example: "He uploads a mysterious Instagram story.",
       options: [
-        { text: "Laugh it off, go home and play games.", emoji: "🎮" },
-        { text: "Feel a bit sad and rant to my bro.", emoji: "��" },
-        { text: "Get suspicious and drop a screenshot in the group chat.", emoji: "📸" },
-        { text: "Instantly make other plans.", emoji: "📅" },
+        { text: "Analyze it with my bestie for 30 minutes.", emoji: "🕵️‍♀️" },
+        { text: "Reply with a meme.", emoji: "🤪" },
+        { text: "Ignore it, but secretly wonder if it's about me.", emoji: "🤔" },
+        { text: "Post my own story, but make it even more mysterious.", emoji: "😏" },
       ],
     },
     {
       section: "Dating Meme Situation",
-      question: "Your situationship is chatting with another guy. How do you react?",
-      example: "You see the person you're talking to having a friendly chat with another guy.",
+      question: "He's late for your date. What do you do?",
+      example: "He arrives 15 minutes late to your date.",
       options: [
-        { text: "Pretend I don't care, but I care a LOT.", emoji: "😶" },
-        { text: "Get jealous but say nothing.", emoji: "😑" },
-        { text: "Get salty and text less.", emoji: "😒" },
-        { text: "Confront them directly (and regret it later).", emoji: "😡" },
-      ],
-    },
-    {
-      section: "Dating Meme Situation",
-      question: "They only reply with emojis. What do you do?",
-      example: "They only send emojis in response to your messages.",
-      options: [
-        { text: "Reply with just emojis too.", emoji: "😐" },
-        { text: "Feel the distance.", emoji: "🧊" },
-        { text: "Send an even funnier meme in return.", emoji: "😂" },
-        { text: "Don't reply (pride).", emoji: "😤" },
-      ],
-    },
-    {
-      section: "Dating Meme Situation",
-      question: "Your bro asks for dating advice. What do you do?",
-      example: "Your friend suddenly starts talking about their dating problems.",
-      options: [
-        { text: "Give serious advice, but end with a meme.", emoji: "🧐" },
-        { text: "Just reply with a meme.", emoji: "🤣" },
-        { text: "Change the topic to my own love life.", emoji: "😏" },
-        { text: "Just keep saying 'just shoot your shot.'", emoji: "🙄" },
-      ],
-    },
-    {
-      section: "Dating Meme Situation",
-      question: "The bill comes out of nowhere during a date. What's your move?",
-      example: "Suddenly, the bill arrives during your date.",
-      options: [
-        { text: "Pay for everything (but do the math in my head).", emoji: "💸" },
-        { text: "Suggest splitting the bill (awkward).", emoji: "🤝" },
-        { text: "Pretend to look for my wallet.", emoji: "👜" },
-        { text: "Wait for them to pay.", emoji: "👀" },
+        { text: "Text 'no worries!' but actually annoyed.", emoji: "😇" },
+        { text: "Order a coffee and wait.", emoji: "☕️" },
+        { text: "Call my friend to complain.", emoji: "📞" },
+        { text: "Show up late next time as payback.", emoji: "😏" },
       ],
     },
   ],
-  [ // 13~18번
+  [ // 7~12번 (Personality & Communication)
     {
       section: "Dating Meme Situation",
-      question: "They say 'I'm tired today' and cancel. What do you do?",
-      example: "They say they're tired and postpone the date.",
+      question: "You catch feelings but don't want to admit it.",
+      example: "You realize you like him, but you're in denial.",
       options: [
-        { text: "Drive them home (nice guy mode).", emoji: "🚗" },
-        { text: "Try to make the date happen anyway.", emoji: "💪" },
-        { text: "Go home and play games.", emoji: "🎮" },
-        { text: "Show I'm a little sad.", emoji: "🥲" },
+        { text: "Tell my friends but deny it to myself.", emoji: "🙅‍♀️" },
+        { text: "Drop hints and hope he notices.", emoji: "😉" },
+        { text: "Act extra chill around him.", emoji: "😎" },
+        { text: "Write about it in my notes app.", emoji: "📱" },
       ],
     },
     {
       section: "Dating Meme Situation",
-      question: "First meeting, they're super quiet. What do you do?",
-      example: "First meeting, they barely talk at all.",
+      question: "He leaves you on read. What now?",
+      example: "You see he read your message but didn't reply.",
       options: [
-        { text: "Try to break the ice, but make it even more awkward.", emoji: "😬" },
-        { text: "Get quiet too (awkward stare-off).", emoji: "😶" },
-        { text: "Try to lighten the mood with a meme story.", emoji: "😂" },
-        { text: "Just hope it ends soon.", emoji: "😑" },
+        { text: "Double text after a few hours.", emoji: "📲" },
+        { text: "Pretend I didn't notice.", emoji: "😶" },
+        { text: "Send a meme to break the ice.", emoji: "🤡" },
+        { text: "Unfollow him for a day.", emoji: "🙃" },
       ],
     },
     {
       section: "Dating Meme Situation",
-      question: "They post about you on social media. What's your move?",
-      example: "They posted about you on social media.",
+      question: "Your friend confesses she likes the same guy.",
+      example: "Your close friend says she likes your crush.",
       options: [
-        { text: "Like the post (act cool).", emoji: "👍" },
-        { text: "Leave a funny comment.", emoji: "💬" },
-        { text: "Brag to my friends.", emoji: "📢" },
-        { text: "Feel a bit pressured, but don't show it.", emoji: "😅" },
+        { text: "Pretend I'm cool, but feel awkward.", emoji: "😬" },
+        { text: "Suggest we both move on.", emoji: "🏃‍♀️🏃‍♀️" },
+        { text: "Let her have him, friendship first!", emoji: "👭" },
+        { text: "Secretly compete, may the best girl win.", emoji: "🏆" },
       ],
     },
     {
       section: "Dating Meme Situation",
-      question: "It suddenly starts raining during your date. What do you do?",
-      example: "Suddenly, it starts pouring rain during your date.",
+      question: "He asks 'What are we?'",
+      example: "He suddenly asks about your relationship status.",
       options: [
-        { text: "Be romantic and share my umbrella (cosplay).", emoji: "☔" },
-        { text: "We both run for it (reality).", emoji: "🏃‍♂️" },
-        { text: "Take a selfie in the rain.", emoji: "📸" },
-        { text: "Run to the nearest cafe.", emoji: "🏃" },
+        { text: "Panic and change the subject.", emoji: "😳" },
+        { text: "Give a vague answer.", emoji: "🤔" },
+        { text: "Say 'Let's just see where it goes.'", emoji: "🌊" },
+        { text: "Confess my feelings (and cringe later).", emoji: "💖" },
       ],
     },
     {
       section: "Dating Meme Situation",
-      question: "They ask, 'What are we?' How do you answer?",
-      example: "They suddenly ask about your relationship status.",
+      question: "You want to post about him but not make it obvious.",
+      example: "You want to post a photo with him, but don't want people to know.",
       options: [
-        { text: "Go for a direct confession (but cringe inside).", emoji: "💘" },
-        { text: "Dodge with a joke (escape reality).", emoji: "😅" },
-        { text: "Avoid answering (awkward).", emoji: "👀" },
-        { text: "Reply with a meme (half serious, half joke).", emoji: "🤣" },
+        { text: "Post a group photo and tag everyone.", emoji: "📸" },
+        { text: "Use a cryptic caption.", emoji: "📝" },
+        { text: "Just post my coffee, but he's in the background.", emoji: "☕️" },
+        { text: "Don't post at all, too risky.", emoji: "🙅‍♀️" },
       ],
     },
     {
       section: "Dating Meme Situation",
-      question: "You struggle to express your feelings in a relationship. What do you do?",
-      example: "You're in a relationship but can't express your feelings well.",
+      question: "He gives you a compliment. Your reaction?",
+      example: "He says you look great today.",
       options: [
-        { text: "Try my best (but it's awkward).", emoji: "💪" },
-        { text: "Avoid it (act cool).", emoji: "😎" },
-        { text: "Tell my friends about it in the group chat.", emoji: "👬" },
-        { text: "Just hold it in (cringe at 3am).", emoji: "🛌" },
+        { text: "Blush and say thanks.", emoji: "😊" },
+        { text: "Make a self-deprecating joke.", emoji: "��" },
+        { text: "Compliment him back.", emoji: "😏" },
+        { text: "Pretend I didn't hear it.", emoji: "🙉" },
+      ],
+    },
+  ],
+  [ // 13~18번 (Group Chat, Overthinking, Real-life)
+    {
+      section: "Dating Meme Situation",
+      question: "You see him with another girl in public.",
+      example: "You spot him talking to another girl at a cafe.",
+      options: [
+        { text: "Pretend not to notice, but text my friends immediately.", emoji: "📱" },
+        { text: "Go say hi and act casual.", emoji: "😇" },
+        { text: "Overthink for the rest of the day.", emoji: "🤯" },
+        { text: "Assume it's his cousin (copium).", emoji: "😅" },
+      ],
+    },
+    {
+      section: "Dating Meme Situation",
+      question: "You're not sure if he's flirting or just being nice.",
+      example: "He sends you a funny meme and compliments your outfit.",
+      options: [
+        { text: "Ask my friends for their opinion.", emoji: "🕵️‍♀️" },
+        { text: "Analyze every message.", emoji: "🧐" },
+        { text: "Just go with the flow.", emoji: "🌊" },
+        { text: "Flirt back and see what happens.", emoji: "😉" },
+      ],
+    },
+    {
+      section: "Dating Meme Situation",
+      question: "He forgets your birthday. What do you do?",
+      example: "He doesn't text you on your birthday.",
+      options: [
+        { text: "Pretend it's no big deal, but feel hurt.", emoji: "🥲" },
+        { text: "Drop hints all day.", emoji: "🎂" },
+        { text: "Tell him directly.", emoji: "🗣️" },
+        { text: "Ignore him for a week.", emoji: "🙄" },
+      ],
+    },
+    {
+      section: "Dating Meme Situation",
+      question: "You want to say 'I miss you' but feel shy.",
+      example: "You want to text him 'I miss you' but hesitate.",
+      options: [
+        { text: "Send a meme instead.", emoji: "🤪" },
+        { text: "Just like his old photos.", emoji: "❤️" },
+        { text: "Wait for him to say it first.", emoji: "⏳" },
+        { text: "Type it out, then delete.", emoji: "🫣" },
+      ],
+    },
+    {
+      section: "Dating Meme Situation",
+      question: "You're getting ready for a date.",
+      example: "You have a date tonight and are picking your outfit.",
+      options: [
+        { text: "Try on five different outfits.", emoji: "👗" },
+        { text: "Ask my friends for advice.", emoji: "📸" },
+        { text: "Arrive fashionably late.", emoji: "⏰" },
+        { text: "Get nervous and almost cancel.", emoji: "😳" },
+      ],
+    },
+    {
+      section: "Dating Meme Situation",
+      question: "He finally asks you out. Your response?",
+      example: "He texts you to go out for dinner together.",
+      options: [
+        { text: "Say yes, but play it cool.", emoji: "😎" },
+        { text: "Scream internally, but act chill.", emoji: "😱" },
+        { text: "Tell my friends immediately.", emoji: "📱" },
+        { text: "Make him wait a bit before replying.", emoji: "⏳" },
       ],
     },
   ],
@@ -223,7 +223,7 @@ export default function TestPage() {
 
   // partIdx가 0,1,2가 아니면 404 안내
   if (partIdx < 0 || partIdx > 2) {
-    return <div className="text-center text-2xl mt-20">존재하지 않는 파트입니다.</div>;
+    return <div className="text-center text-2xl mt-20">404 Not Found</div>;
   }
 
   const [answers, setAnswers] = useState(() => {
@@ -245,12 +245,12 @@ export default function TestPage() {
 
   const goNext = () => {
     if (partIdx < 2) {
-      router.push(`/relatableguy/test/${partIdx + 2}`);
+      router.push(`/relatablegirl/test/${partIdx + 2}`);
       if (typeof window !== "undefined") {
         setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 0);
       }
     } else {
-      router.push("/relatableguy/result"); // 마지막 파트에서 결과 페이지로 이동(필요시)
+      router.push("/relatablegirl/result"); // 마지막 파트에서 결과 페이지로 이동(필요시)
     }
   };
 

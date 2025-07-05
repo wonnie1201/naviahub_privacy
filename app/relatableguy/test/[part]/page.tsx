@@ -223,7 +223,7 @@ export default function TestPage() {
 
   // partIdx가 0,1,2가 아니면 404 안내
   if (partIdx < 0 || partIdx > 2) {
-    return <div className="text-center text-2xl mt-20">존재하지 않는 파트입니다.</div>;
+    return <div className="text-center text-2xl mt-20">404 Not Found</div>;
   }
 
   const [answers, setAnswers] = useState(() => {

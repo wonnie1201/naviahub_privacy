@@ -1,18 +1,18 @@
 import Image from "next/image";
 
 export const metadata = {
-  title: "Which Meme Guy Are You? 😂 Find Out in the 100% Relatable Dating Test!",
-  description: "For guys only! Are you the Ghost 👻, the Simp 🥲, or the Meme Lord 🤣? Discover your dating meme type in 2 minutes!",
+  title: "Which Meme Girl Are You? 💖 Take the Ultimate Relatable Dating Test!",
+  description: "For girls only! Are you the Overthinker 🙈, the Group Chat Queen 💬, or the Outfit Planner 👗? Discover your dating meme type in 2 minutes!",
   openGraph: {
-    title: "Which Meme Guy Are You? 😂 Find Out in the 100% Relatable Dating Test!",
-    description: "For guys only! Are you the Ghost 👻, the Simp 🥲, or the Meme Lord 🤣? Discover your dating meme type in 2 minutes!",
-    url: "https://relatableguy.naviahub.dev/",
+    title: "Which Meme Girl Are You? 💖 Take the Ultimate Relatable Dating Test!",
+    description: "For girls only! Are you the Overthinker 🙈, the Group Chat Queen 💬, or the Outfit Planner 👗? Discover your dating meme type in 2 minutes!",
+    url: "https://naviahub.dev/relatablegirl/",
     images: [
       {
-        url: "/heart_thumbnail_1200x630.png",
+        url: "/1200_680.png",
         width: 1200,
-        height: 630,
-        alt: "Meme Dating Test",
+        height: 680,
+        alt: "Meme Dating Test for Girls",
       },
     ],
     type: "website",
@@ -25,7 +25,7 @@ export default function Page() {
       <main className="flex flex-col items-center justify-center flex-1 w-full max-w-lg mx-auto">
         <div className="mb-6">
           <Image
-            src="/relatableguy/undraw_art_odou.svg"
+            src="/relatableguy/undraw_love_qypu.svg"
             alt="Intro illustration"
             width={220}
             height={160}
@@ -34,30 +34,30 @@ export default function Page() {
           />
         </div>
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#ff5da2] text-center mb-6 leading-tight drop-shadow">
-          100% Relatable Guy Meme Dating Test<br />
-          (Cringe, Flex, Group Chat & More)
-          <span className="block text-base text-[#5daaff] font-semibold mt-2">(For Guys Only)</span>
+        If you relate to any of these, this test is basically made for you!<br />
+          (Outfits, DMs, Group Chat & More)
+          <span className="block text-base text-[#FFC0CB] font-semibold mt-2">(For Girls Only)</span>
         </h1>
         <ul className="mb-8 space-y-2">
           <li className="flex items-start gap-2">
-            <span className="text-[#ff5da2] text-lg font-bold">😎</span>
-            <span className="text-white text-base sm:text-lg">Ever acted cool, then cringed in bed at 3am?</span>
+            <span className="text-[#ff5da2] text-lg font-bold">💬</span>
+            <span className="text-white text-base sm:text-lg">Ever sent your friends a screenshot of his ‘hey’ just to overanalyze every word?</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-[#ff5da2] text-lg font-bold">📸</span>
-            <span className="text-white text-base sm:text-lg">Ever dropped a screenshot in the group chat?</span>
+            <span className="text-[#ff5da2] text-lg font-bold">👗</span>
+            <span className="text-white text-base sm:text-lg">Planned your entire outfit for a date, then changed it five times before leaving?</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-[#ff5da2] text-lg font-bold">🎮</span>
-            <span className="text-white text-base sm:text-lg">No reply? Time to escape into gaming.</span>
+            <span className="text-[#ff5da2] text-lg font-bold">📱</span>
+            <span className="text-white text-base sm:text-lg">Watched his Instagram story, then immediately texted your bestie: ‘Did you see what he posted?!.</span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-[#ff5da2] text-lg font-bold">🤣</span>
-            <span className="text-white text-base sm:text-lg">If you read this and think "that's literally me"—start now! 😂</span>
+            <span className="text-white text-base sm:text-lg">Pretended to be chill when he took hours to reply, but actually checked your phone every five minutes?! 😎</span>
           </li>
         </ul>
         <a
-          href="/relatableguy/test/1"
+          href="/relatablegirl/test/1"
           className="mt-2 px-8 py-3 rounded-full bg-[#ff5da2] text-white font-semibold text-lg shadow-md hover:bg-[#ff7db2] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#ff5da2] focus:ring-offset-2"
         >
           Start Meme Test

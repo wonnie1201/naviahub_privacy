@@ -6,13 +6,13 @@ export const metadata = {
   openGraph: {
     title: "Which Meme Guy Are You? 😂 Find Out in the 100% Relatable Dating Test!",
     description: "For guys only! Are you the Ghost 👻, the Simp 🥲, or the Meme Lord 🤣? Discover your dating meme type in 2 minutes!",
-    url: "https://relatableguy.naviahub.dev/",
+    url: "https://naviahub.dev/relatableguy/",
     images: [
       {
-        url: "/heart_thumbnail_1200x630.png",
+        url: "/1200_680.png",
         width: 1200,
-        height: 630,
-        alt: "Meme Dating Test",
+        height: 680,
+        alt: "Meme Dating Test for Guys",
       },
     ],
     type: "website",
@@ -25,7 +25,7 @@ export default function Page() {
       <main className="flex flex-col items-center justify-center flex-1 w-full max-w-lg mx-auto">
         <div className="mb-6">
           <Image
-            src="/relatableguy/undraw_art_odou.svg"
+            src="/relatableguy/undraw_loving-it_hspq.svg"
             alt="Intro illustration"
             width={220}
             height={160}
