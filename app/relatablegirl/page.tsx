@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { gtag } from "@/app/util/ga";
+import StartTestButton from "./StartTestButton";
 
 export const metadata = {
   title: "Which Meme Girl Are You? 💖 Take the Ultimate Relatable Dating Test!",
@@ -41,7 +43,7 @@ export default function Page() {
         <ul className="mb-8 space-y-2">
           <li className="flex items-start gap-2">
             <span className="text-[#ff5da2] text-lg font-bold">💬</span>
-            <span className="text-white text-base sm:text-lg">Ever sent your friends a screenshot of his ‘hey’ just to overanalyze every word?</span>
+            <span className="text-white text-base sm:text-lg">Ever sent your friends a screenshot of his 'hey' just to overanalyze every word?</span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-[#ff5da2] text-lg font-bold">👗</span>
@@ -49,19 +51,23 @@ export default function Page() {
           </li>
           <li className="flex items-start gap-2">
             <span className="text-[#ff5da2] text-lg font-bold">📱</span>
-            <span className="text-white text-base sm:text-lg">Watched his Instagram story, then immediately texted your bestie: ‘Did you see what he posted?!.</span>
+            <span className="text-white text-base sm:text-lg">Watched his Instagram story, then immediately texted your bestie: 'Did you see what he posted?!.</span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-[#ff5da2] text-lg font-bold">🤣</span>
             <span className="text-white text-base sm:text-lg">Pretended to be chill when he took hours to reply, but actually checked your phone every five minutes?! 😎</span>
           </li>
         </ul>
-        <a
-          href="/relatablegirl/test/1"
-          className="mt-2 px-8 py-3 rounded-full bg-[#ff5da2] text-white font-semibold text-lg shadow-md hover:bg-[#ff7db2] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#ff5da2] focus:ring-offset-2"
-        >
-          Start Meme Test
-        </a>
+        <StartTestButton />
+        <div className="mt-4 flex flex-col items-center">
+          <span className="text-base text-gray-400 mb-1">Are you a boy?</span>
+          <a
+            href="/relatableguy"
+            className="text-blue-300 underline hover:text-blue-400 transition-colors text-sm"
+          >
+            Take the boy test here
+          </a>
+        </div>
       </main>
       <footer className="w-full text-center text-xs text-[#888] mt-12 mb-4 select-none">
         © 2025 Meme Dating Test | All results are just for fun!

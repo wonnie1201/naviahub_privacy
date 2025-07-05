@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Confetti from "react-confetti";
+import { gtag } from "@/app/util/ga";
 
 const RESULTS = [
   { type: "The Comedian", emoji: "🤣", percent: "Top 4%" },
@@ -19,6 +20,39 @@ const PRAISES: Record<string, string> = {
   "Top 30%": "Not bad! But you're still lurking in the group chat, aren't you?",
   "Top 50%": "Classic. You're the average meme enjoyer. Maybe try shooting your shot next time?",
   "Top 80%": "Bruh… You're basically a ghost. Your friends are still waiting for your reply.",
+};
+
+const RESULT_FEATURES: Record<string, string[]> = {
+  "Top 4%": [
+    "🤣 You're the one dropping memes before anyone else even gets the joke.",
+    "🏷️ Your friends tag you in every viral meme—because you probably made it first.",
+    "🔥 You can turn any awkward silence into a group chat roast session."
+  ],
+  "Top 10%": [
+    "⚡ You reply 'LOL' before the message is even sent.",
+    "🎯 You shoot your shot in the DMs—no hesitation, no regrets.",
+    "🤳 Your friends call you the 'fastest texter in the West.'"
+  ],
+  "Top 20%": [
+    "🧐 You analyze every 'seen' and 'typing…' like it's chess.",
+    "📦 You have a meme ready for every possible scenario.",
+    "🧠 You're the mastermind behind the group chat's best comebacks."
+  ],
+  "Top 30%": [
+    "👀 You read every message but only reply with a single emoji.",
+    "🤫 You know all the drama but never get involved.",
+    "💬 Your friends forget you're in the group chat—until you drop a legendary meme."
+  ],
+  "Top 50%": [
+    "📣 You hype up your crush's story like it's the Super Bowl.",
+    "🌅 You send good morning texts… and good night memes.",
+    "😂 Your friends roast you for catching feelings—again."
+  ],
+  "Top 80%": [
+    "👻 You leave everyone on read for days (or weeks).",
+    "🆘 Your friends send 'are you alive?' memes to check in.",
+    "🌚 You show up once in a blue moon—just to drop a meme and disappear."
+  ],
 };
 
 // 18문항, 4지선다, 6개 유형 인덱스(0~5)
@@ -97,6 +131,10 @@ export default function ResultPage() {
 
   const handleRetake = () => {
     if (typeof window !== "undefined") {
+      gtag('retake_test', {
+        category: 'relatableguy',
+        label: 'Retake Test Button',
+      });
       localStorage.setItem("test-answers", JSON.stringify(Array(18).fill(null)));
       router.push("/relatableguy/test/1");
     }
@@ -108,6 +146,12 @@ export default function ResultPage() {
       setTimeout(() => setToast(""), 2000);
       return;
     }
+    gtag('copy_share', {
+      category: 'relatableguy',
+      label: 'Copy Share Button',
+      resultType: result.type,
+      resultPercent: result.percent,
+    });
     let shareText = "";
     switch (result.percent) {
       case "Top 4%":
@@ -153,6 +197,10 @@ export default function ResultPage() {
     }
   };
 
+  const resultPercent = result?.percent || "Top 80%";
+  const resultType = result?.type || "The Ghost";
+  const resultEmoji = result?.emoji || "👻";
+
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-[#18171a] px-4">
       {showConfetti && typeof window !== "undefined" && (
@@ -174,7 +222,7 @@ export default function ResultPage() {
               You are:
             </h1>
             <div className="text-5xl font-bold text-center mb-2 text-white">
-              {result.emoji} {result.type}
+              {resultEmoji} {resultType}
             </div>
             <p className="text-xl sm:text-2xl font-semibold text-[#ff5da2] mb-2 text-center">
               {result.percent} of all test takers
@@ -183,6 +231,17 @@ export default function ResultPage() {
             <p className="text-lg text-center mb-8 text-white">
               {PRAISES[result.percent]}
             </p>
+            <div className="mt-8">
+              <h2 className="text-xl font-bold mb-6 text-pink-300 tracking-wide leading-snug">
+                <span className="mr-2">{resultEmoji}</span>{resultPercent.replace('Top ', '')} {resultType} Type
+              </h2>
+              <hr className="border-t border-gray-700 mb-6" />
+              <ol className="list-decimal list-inside text-gray-200 space-y-3 mt-4 mb-15 pl-4 text-lg">
+                {RESULT_FEATURES[result?.percent || "Top 80%"].map((feature, idx) => (
+                  <li key={idx}>{feature}</li>
+                ))}
+              </ol>
+            </div>
           </>
         ) : (
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#ff5da2] text-center mb-8 drop-shadow">

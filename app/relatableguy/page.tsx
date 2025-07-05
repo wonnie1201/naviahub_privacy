@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { gtag } from "../util/ga";
+import StartTestButton from "./StartTestButton";
 
 export const metadata = {
   title: "Which Meme Guy Are You? 😂 Find Out in the 100% Relatable Dating Test!",
@@ -56,12 +58,16 @@ export default function Page() {
             <span className="text-white text-base sm:text-lg">If you read this and think "that's literally me"—start now! 😂</span>
           </li>
         </ul>
-        <a
-          href="/relatableguy/test/1"
-          className="mt-2 px-8 py-3 rounded-full bg-[#ff5da2] text-white font-semibold text-lg shadow-md hover:bg-[#ff7db2] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#ff5da2] focus:ring-offset-2"
-        >
-          Start Meme Test
-        </a>
+        <StartTestButton />
+        <div className="mt-4 flex flex-col items-center">
+          <span className="text-base text-gray-400 mb-1">Are you a girl?</span>
+          <a
+            href="/relatablegirl"
+            className="text-pink-300 underline hover:text-pink-400 transition-colors text-sm"
+          >
+            Take the girl test here
+          </a>
+        </div>
       </main>
       <footer className="w-full text-center text-xs text-[#888] mt-12 mb-4 select-none">
         © 2025 Meme Dating Test | All results are just for fun!
