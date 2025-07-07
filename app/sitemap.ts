@@ -1,3 +1,6 @@
+
+export const runtime = "edge";
+
 export async function GET() {
   const routes = [
     "", // 홈
