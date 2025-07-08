@@ -27,6 +27,9 @@ export const metadata = {
     images: ["/1200_680.png"],
     site: "@naviahub",
   },
+  alternates: {
+    canonical: "https://naviahub.dev/",
+  },
 };
 
 const features = [

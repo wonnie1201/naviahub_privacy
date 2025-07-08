@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
+import Head from "next/head";
 
 const PINK = "#ffb6d5"; // 연한 핑크
 const PINK_HOVER = "#ffc6e0";
@@ -259,6 +260,11 @@ export default function TestPage() {
   const progressPercent = Math.round((answeredCount / totalQuestions) * 100);
 
   return (
+    <>
+    <Head>
+      <link rel="canonical" href={`https://naviahub.dev/relatablegirl/test/${partParam}`} />
+      <meta name="description" content="You're halfway through the 100% Relatable Meme Dating Test for Girls! Will you end up as the Overthinker 🤯, the Group Chat Queen 💅, or the Ghost 👻? Keep going!" />
+    </Head>
     <div className="min-h-screen bg-[#18171a] flex flex-col items-center px-2 pb-10" style={{ color: PINK }}>
       {/* 상단 sticky 진행도 */}
       <div className="w-full max-w-2xl mx-auto mt-0 sticky top-0 z-20 bg-[#18171a] shadow-md shadow-black/10" style={{ color: PINK }}>
@@ -327,5 +333,6 @@ export default function TestPage() {
         </button>
       </div>
     </div>
+    </>
   );
 } 

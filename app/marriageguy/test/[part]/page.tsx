@@ -287,6 +287,7 @@ export default function TestPage() {
         <link rel="canonical" href={`https://naviahub.dev/marriageguy/test/${partParam}`} />
         <meta name="description" content="Marriage Meme Test in progress! Answer hilarious questions and discover your wedding meme type soon. Will you be a Meme Priest, Speed-Groom, or Ghost? 😂💍" />
       </Head>
+      
       <div className="min-h-screen bg-[#18171a] flex flex-col items-center px-2 pb-10" style={{ color: PINK }}>
         {/* 상단 sticky 진행도 */}
         <div className="w-full max-w-2xl mx-auto mt-0 sticky top-0 z-20 bg-[#18171a] shadow-md shadow-black/10" style={{ color: PINK }}>

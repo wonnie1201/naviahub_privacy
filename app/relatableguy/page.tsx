@@ -19,6 +19,9 @@ export const metadata = {
     ],
     type: "website",
   },
+  alternates: {
+    canonical: "https://naviahub.dev/relatableguy",
+  },
 };
 
 export default function Page() {

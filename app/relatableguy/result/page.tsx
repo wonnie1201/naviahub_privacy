@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Confetti from "react-confetti";
 import { gtag } from "@/app/util/ga";
+import Head from "next/head";
 
 const RESULTS = [
   { type: "The Comedian", emoji: "🤣", percent: "Top 4%" },
@@ -202,6 +203,11 @@ export default function ResultPage() {
   const resultEmoji = result?.emoji || "👻";
 
   return (
+    <>
+    <Head>
+      <link rel="canonical" href="https://naviahub.dev/relatableguy/result" />
+      <meta name="description" content="Your dating meme type has been revealed! Discover if you're a Comedian 🤣, a Rusher 🚀, or a Ghost 👻 — and share the laughs with friends."/>
+    </Head>
     <div className="min-h-screen flex flex-col justify-center items-center bg-[#18171a] px-4">
       {showConfetti && typeof window !== "undefined" && (
         <Confetti
@@ -286,5 +292,6 @@ export default function ResultPage() {
         </div>
       )}
     </div>
+    </>
   );
 } 
