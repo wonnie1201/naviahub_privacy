@@ -1,8 +1,14 @@
-export async function GET() {
-  const content = `User-agent: *\nAllow: /\nSitemap: https://naviahub.dev/sitemap.xml\n`;
-  return new Response(content, {
-    headers: {
-      "Content-Type": "text/plain",
-    },
-  });
-} 
+// app/robots.ts
+import { MetadataRoute } from 'next';
+
+export default function robots(): MetadataRoute.Robots {
+  return {
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/',
+      },
+    ],
+    sitemap: 'https://naviahub.dev/sitemap.xml',
+  };
+}
