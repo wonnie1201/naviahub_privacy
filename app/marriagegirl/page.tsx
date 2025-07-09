@@ -20,7 +20,7 @@ export const metadata = {
     type: "website",
   },
   alternates: {
-    canonical: "https://naviahub.dev/marriagegirl",
+    canonical: "https://naviahub.dev/marriagegirl/",
   },
 };
 

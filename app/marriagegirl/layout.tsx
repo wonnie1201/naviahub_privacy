@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     url: "https://naviahub.dev/marriagegirl/",
     images: [
       {
-        url: "https://naviahub.dev/undraw_wedding_qt3q_1200x630.png",
+        url: "/undraw_wedding_qt3q_1200x630.png",
         width: 1200,
         height: 630,
         alt: "Meme Marriage Test",

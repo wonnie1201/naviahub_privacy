@@ -11,16 +11,16 @@ export const metadata = {
     url: "https://naviahub.dev/relatablegirl/",
     images: [
       {
-        url: "/1200_680.png",
+        url: "/undraw_love_qypu_1200x630.png",
         width: 1200,
-        height: 680,
+        height: 630,
         alt: "Meme Dating Test for Girls",
       },
     ],
     type: "website",
   },
   alternates: {
-    canonical: "https://naviahub.dev/relatablegirl",
+    canonical: "https://naviahub.dev/relatablegirl/",
   },
 };
 

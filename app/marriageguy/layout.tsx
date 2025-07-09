@@ -12,9 +12,29 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  title: "Marriage Meme Test for Guys | naviahub.dev",
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://naviahub.dev'),
+  title: "Marriage Meme Test for Guys 💅 | Find Your Bridal Vibe",
   description: "Discover your hilarious wedding alter ego — from Meme Priest to Escape Artist. The meme-based marriage test that doesn’t take 'I do' too seriously. 💀💍",
+
+  openGraph: {
+   title: "Marriage Meme Test for Guys 💀 | What’s Your Wedding Vibe?",
+  description: "From Meme Priest to Escape Artist — discover your hilarious wedding alter ego in this brutally honest meme quiz for guys. 🚀💍",
+    url: "https://naviahub.dev/marriageguy/",
+    images: [
+      {
+        url: "/undraw_wedding_qt3q_1200x630.png",
+        width: 1200,
+        height: 630,
+        alt: "Meme Marriage Test",
+      },
+    ],
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://naviahub.dev/marriageguy/",
+  },
 };
 
 export default function RelatableguyLayout({
