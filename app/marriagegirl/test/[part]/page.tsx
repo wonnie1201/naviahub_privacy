@@ -284,6 +284,7 @@ export default function TestPage() {
   return (
     <>
       <Head>
+        <title>Marriage Meme Test for Girls - Step ${partParam} | Discover Your Bridal Alter Ego</title>
         <link rel="canonical" href={`https://naviahub.dev/marriagegirl/test/${partParam}`} />
         <meta name="description" content="Marriage Meme Test in progress! 💍 Answer brutally relatable questions and reveal your bridal meme energy soon. Are you a Pinterest Bride, Panic Queen, or Commitment Ghost? 😂" />
 
@@ -312,7 +313,7 @@ export default function TestPage() {
           "url": "https://naviahub.dev"
         },
         "datePublished": "2025-07-09",
-        "dateModified": "2025-07-09",
+        "dateModified": "2025-07-09"
       }
     ` }} />
       </Head>

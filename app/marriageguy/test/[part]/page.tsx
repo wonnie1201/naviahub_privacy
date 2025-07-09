@@ -284,8 +284,38 @@ export default function TestPage() {
   return (
     <>
       <Head>
+      <title>Marriage Meme Test for Guys - Step ${partParam} 💀</title>
         <link rel="canonical" href={`https://naviahub.dev/marriageguy/test/${partParam}`} />
         <meta name="description" content="Marriage Meme Test in progress! Answer hilarious questions and discover your wedding meme type soon. Will you be a Meme Priest, Speed-Groom, or Ghost? 😂💍" />
+
+        <meta name="robots" content="index, follow" />
+    
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `
+      {
+        "@context": "https://schema.org",
+      "@type": "WebPage",
+    "name": "Marriage Meme Test for Guys - Step ${partParam}",
+    "description": "Fun and brutally honest meme test in progress. Answer now to unlock your wedding alter ego!",
+    "url": "https://naviahub.dev/marriageguy/test/${partParam}",
+    "image": "https://naviahub.dev/undraw_wedding_qt3q_1200x630.png",
+    "inLanguage": "en",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Men interested in memes and marriage"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "NaviaHub"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "NaviaHub",
+      "url": "https://naviahub.dev"
+    },
+    "datePublished": "2025-07-08",
+    "dateModified": "2025-07-09"
+  }
+    ` }} />
       </Head>
       
       <div className="min-h-screen bg-[#18171a] flex flex-col items-center px-2 pb-10" style={{ color: PINK }}>

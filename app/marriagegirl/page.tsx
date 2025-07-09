@@ -36,7 +36,7 @@ export default function Page() {
           "url": "https://naviahub.dev"
         },
         "datePublished": "2025-07-09",
-        "dateModified": "2025-07-09",
+        "dateModified": "2025-07-09"
       }
     ` }} />
   </Head>

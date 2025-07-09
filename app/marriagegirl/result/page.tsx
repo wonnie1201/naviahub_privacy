@@ -220,8 +220,9 @@ export default function ResultPage() {
   return (
     <>
       <Head>
+        <title>Pinterest Bride ✨ | Top 4% Meme Marriage Type 😂💍</title>
         <link rel="canonical" href="https://naviahub.dev/marriagegirl/result" />
-        <meta name="description" content="Marriage? Kind of a meme. Take the Meme Marriage Test to find out if you're a Pinterest Dreamer, Group Chat Bride, or Commitment Ghost. 😂💍 Discover your bridal energy and share the fun!" />
+        <meta name="description" content="Only 4% got this! You're officially a Pinterest Bride — the rarest bridal meme type. 💅 Discover what it says about you and share the result!" />
 
         <meta name="robots" content="index, follow" />
   
@@ -229,8 +230,8 @@ export default function ResultPage() {
       {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "Your Meme Marriage Result - Pinterest Dreamer?",
-        "description": "You got the Pinterest Dreamer! 💅 Discover your bridal meme energy in this hilarious test result.",
+        "name": "Pinterest Bride ✨ | Top 4% Meme Marriage Type",
+        "description": "Only 4% got this! You're officially a Pinterest Bride — the rarest bridal meme type. 💅 Discover what it says about you and share the result!",
         "url": "https://naviahub.dev/marriagegirl/result",
         "image": "https://naviahub.dev/undraw_wedding_qt3q_1200x630.png",
         "inLanguage": "en",
@@ -248,7 +249,7 @@ export default function ResultPage() {
           "url": "https://naviahub.dev"
         },
         "datePublished": "2025-07-09",
-        "dateModified": "2025-07-09",
+        "dateModified": "2025-07-09"
       }
     ` }} />
       </Head>

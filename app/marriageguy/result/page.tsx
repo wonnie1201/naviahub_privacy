@@ -221,8 +221,39 @@ export default function ResultPage() {
   return (
     <>
       <Head>
-        <link rel="canonical" href="https://naviahub.dev/marriageguy/result" />
-        <meta name="description" content="Marriage? Just a meme! Take the Meme Marriage Test and find out if you’re a Meme Priest, Speed-Groom, or Ghost. Discover your wedding alter ego and share the laughs! 😂💍" />
+
+  <title>Speed-Groom 🚀 | Top 10% Meme Marriage Type 💀💍</title>
+  <link rel="canonical" href="https://naviahub.dev/marriageguy/result" />
+  <meta name="description" content="Only 10% get this! You're a Speed-Groom — fast, funny, and slightly terrified. 💀 Take the Meme Marriage Test and share your chaotic wedding energy!" />
+  <meta name="robots" content="index, follow" />
+
+  <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Speed-Groom 🚀 | Top 10% Meme Marriage Type",
+      "description": "Only 10% get this! You're a Speed-Groom — fast, funny, and slightly terrified. 💀 Take the Meme Marriage Test and share your chaotic wedding energy!",
+      "url": "https://naviahub.dev/marriageguy/result",
+      "image": "https://naviahub.dev/undraw_wedding_qt3q_1200x630.png",
+      "inLanguage": "en",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Men interested in memes and marriage"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "NaviaHub"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "NaviaHub",
+        "url": "https://naviahub.dev"
+      },
+      "datePublished": "2025-07-08",
+      "dateModified": "2025-07-09"
+    }
+  ` }} />
+      
       </Head>
       <div className="min-h-screen flex flex-col justify-center items-center bg-[#18171a] px-4">
         {showConfetti && typeof window !== "undefined" && (
