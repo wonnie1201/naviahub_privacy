@@ -222,8 +222,37 @@ export default function ResultPage() {
       <Head>
         <link rel="canonical" href="https://naviahub.dev/marriagegirl/result" />
         <meta name="description" content="Marriage? Kind of a meme. Take the Meme Marriage Test to find out if you're a Pinterest Dreamer, Group Chat Bride, or Commitment Ghost. 😂💍 Discover your bridal energy and share the fun!" />
+
+        <meta name="robots" content="index, follow" />
+  
+<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Your Meme Marriage Result - Pinterest Dreamer?",
+        "description": "You got the Pinterest Dreamer! 💅 Discover your bridal meme energy in this hilarious test result.",
+        "url": "https://naviahub.dev/marriagegirl/result",
+        "image": "https://naviahub.dev/undraw_wedding_qt3q_1200x630.png",
+        "inLanguage": "en",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Women interested in memes and marriage"
+        },
+        "creator": {
+          "@type": "Organization",
+          "name": "NaviaHub"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "NaviaHub",
+          "url": "https://naviahub.dev"
+        },
+        "datePublished": "2025-07-09",
+        "dateModified": "2025-07-09",
+      }
+    ` }} />
       </Head>
-      
+
       <div className="min-h-screen flex flex-col justify-center items-center bg-[#18171a] px-4">
         {showConfetti && typeof window !== "undefined" && (
           <Confetti

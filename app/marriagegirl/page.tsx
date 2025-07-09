@@ -1,31 +1,46 @@
 import Image from "next/image";
 import { gtag } from "../util/ga";
 import StartTestButton from "./StartTestButton";
+import Head from "next/head";
 
-export const metadata = {
-  title: "Marriage? Cute idea. But have you seen my grocery bills?",
-  description: "Take the test that every 'just browsing Pinterest weddings for fun' girl needs.",
-  openGraph: {
-    title: "Marriage? Cute idea. But have you seen my grocery bills?",
-    description: "Take the test that every 'just browsing Pinterest weddings for fun' girl needs.",
-    url: "https://naviahub.dev/marriagegirl/",
-    images: [
-      {
-        url: "/undraw_wedding_qt3q_1200x630.png",
-        width: 1200,
-        height: 630,
-        alt: "Meme Marriage Test",
-      },
-    ],
-    type: "website",
-  },
-  alternates: {
-    canonical: "https://naviahub.dev/marriagegirl/",
-  },
-};
 
 export default function Page() {
   return (
+    <>
+    <Head>
+    <title>Marriage? Cute idea. But have you seen my grocery bills?</title>
+    <meta name="description" content="Take the test that every 'just browsing Pinterest weddings for fun' girl needs." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://naviahub.dev/marriagegirl/" />
+    
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Marriage Meme Test for Girls",
+        "description": "Discover your bridal meme type with a 2-minute fun test.",
+        "url": "https://naviahub.dev/marriagegirl/",
+        "image": "https://naviahub.dev/undraw_wedding_qt3q_1200x630.png",
+        "inLanguage": "en",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Women interested in memes and marriage"
+        },
+        "creator": {
+          "@type": "Organization",
+          "name": "NaviaHub"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "NaviaHub",
+          "url": "https://naviahub.dev"
+        },
+        "datePublished": "2025-07-09",
+        "dateModified": "2025-07-09",
+      }
+    ` }} />
+  </Head>
+
     <div className="min-h-screen flex flex-col justify-center items-center bg-[#18171a] px-4">
       <main className="flex flex-col items-center justify-center flex-1 w-full max-w-lg mx-auto">
         <div className="mb-6">
@@ -88,5 +103,6 @@ export default function Page() {
         © 2025 Meme Marriage Test | All results are just for fun!
       </footer>
     </div>
+    </>
   );
 }

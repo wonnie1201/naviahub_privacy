@@ -286,6 +286,35 @@ export default function TestPage() {
       <Head>
         <link rel="canonical" href={`https://naviahub.dev/marriagegirl/test/${partParam}`} />
         <meta name="description" content="Marriage Meme Test in progress! 💍 Answer brutally relatable questions and reveal your bridal meme energy soon. Are you a Pinterest Bride, Panic Queen, or Commitment Ghost? 😂" />
+
+        <meta name="robots" content="index, follow" />
+    
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Marriage Meme Test - Step ${partParam}",
+        "description": "Fun and relatable bridal meme test in progress. Answer now to unlock your wedding alter ego!",
+        "url": "https://naviahub.dev/marriagegirl/test/${partParam}",
+        "image": "https://naviahub.dev/undraw_wedding_qt3q_1200x630.png",
+        "inLanguage": "en",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Women interested in memes and marriage"
+        },
+        "creator": {
+          "@type": "Organization",
+          "name": "NaviaHub"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "NaviaHub",
+          "url": "https://naviahub.dev"
+        },
+        "datePublished": "2025-07-09",
+        "dateModified": "2025-07-09",
+      }
+    ` }} />
       </Head>
       
       <div className="min-h-screen bg-[#18171a] flex flex-col items-center px-2 pb-10" style={{ color: PINK }}>

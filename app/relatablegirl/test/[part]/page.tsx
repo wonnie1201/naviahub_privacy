@@ -320,49 +320,49 @@ export default function TestPage() {
           exit={{ x: "-100vw", skewX: -12, opacity: 0 }}
           transition={{ duration: 0.5, ease: [0.4, 0.8, 0.2, 1] }}
         >
-          <div className="w-full max-w-2xl mx-auto flex flex-col gap-8">
-            {currentQuestions.map((q, idx) => (
-              <div key={idx} className="bg-[#232228] rounded-3xl p-6 shadow flex flex-col gap-3">
-                <div className="flex items-center gap-2 text-lg font-bold mb-1" style={{ color: PINK }}>
-                  <span className="text-2xl">{partIdx === 0 ? "🤣" : partIdx === 1 ? "🧠" : "💬"}</span>
-                  <span>{offset + idx + 1}. {q.question}</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm mb-2">
-                  <span className="font-bold" style={{ color: PINK }}>📌 Example</span>
-                  <span style={{ color: PINK }}>{q.example}</span>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
-                  {q.options.map((opt, oidx) => (
-                    <button
-                      key={opt.text}
-                      className={`w-full py-3 rounded-xl border-2 text-base font-semibold transition-colors duration-150`}
-                      style={{
-                        background: answers[offset + idx] === oidx ? PINK : "transparent",
-                        borderColor: PINK_BORDER,
-                        color: answers[offset + idx] === oidx ? "#fff" : PINK,
-                      }}
-                      onClick={() => setAnswers((a: (number|null)[]) => a.map((v: number|null, i: number) => i === offset + idx ? oidx : v))}
-                    >
-                      <span className="mr-2 text-base font-semibold" style={{ color: answers[offset + idx] === oidx ? "#fff" : PINK }}>{String.fromCharCode(65 + oidx)}</span>
-                      <span className="mr-2 text-base">{opt.emoji}</span>
-                      {opt.text}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            ))}
+      <div className="w-full max-w-2xl mx-auto flex flex-col gap-8">
+        {currentQuestions.map((q, idx) => (
+          <div key={idx} className="bg-[#232228] rounded-3xl p-6 shadow flex flex-col gap-3">
+            <div className="flex items-center gap-2 text-lg font-bold mb-1" style={{ color: PINK }}>
+              <span className="text-2xl">{partIdx === 0 ? "🤣" : partIdx === 1 ? "🧠" : "💬"}</span>
+              <span>{offset + idx + 1}. {q.question}</span>
+            </div>
+            <div className="flex items-center gap-2 text-sm mb-2">
+              <span className="font-bold" style={{ color: PINK }}>📌 Example</span>
+              <span style={{ color: PINK }}>{q.example}</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
+              {q.options.map((opt, oidx) => (
+                <button
+                  key={opt.text}
+                  className={`w-full py-3 rounded-xl border-2 text-base font-semibold transition-colors duration-150`}
+                  style={{
+                    background: answers[offset + idx] === oidx ? PINK : "transparent",
+                    borderColor: PINK_BORDER,
+                    color: answers[offset + idx] === oidx ? "#fff" : PINK,
+                  }}
+                  onClick={() => setAnswers((a: (number|null)[]) => a.map((v: number|null, i: number) => i === offset + idx ? oidx : v))}
+                >
+                  <span className="mr-2 text-base font-semibold" style={{ color: answers[offset + idx] === oidx ? "#fff" : PINK }}>{String.fromCharCode(65 + oidx)}</span>
+                  <span className="mr-2 text-base">{opt.emoji}</span>
+                  {opt.text}
+                </button>
+              ))}
+            </div>
           </div>
-          {/* 하단 다음/결과 버튼 */}
-          <div className="w-full max-w-2xl mx-auto mt-10 flex justify-center">
-            <button
-              className="w-full py-4 rounded-3xl text-xl font-bold shadow-lg transition-colors duration-200 disabled:opacity-50"
-              style={{ background: PINK, color: "#fff" }}
+        ))}
+      </div>
+      {/* 하단 다음/결과 버튼 */}
+      <div className="w-full max-w-2xl mx-auto mt-10 flex justify-center">
+        <button
+          className="w-full py-4 rounded-3xl text-xl font-bold shadow-lg transition-colors duration-200 disabled:opacity-50"
+          style={{ background: PINK, color: "#fff" }}
               disabled={currentQuestions.some((_, idx) => answers[offset + idx] === null) || isSliding || isBlinking}
               onClick={handleNext}
-            >
-              {partIdx === 2 ? "See Results" : "Next"}
-            </button>
-          </div>
+        >
+          {partIdx === 2 ? "See Results" : "Next"}
+        </button>
+      </div>
         </motion.div>
       </AnimatePresence>
       {/* Blink 오버레이 */}
