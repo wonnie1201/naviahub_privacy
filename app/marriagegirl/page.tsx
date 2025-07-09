@@ -73,7 +73,16 @@ export default function Page() {
         Not anti-marriage — just meme-curious? Let’s vibe check that energy. 👑
         </span>
         <StartTestButton />
-       
+
+        <div className="mt-4 flex flex-col items-center">
+          <span className="text-base text-gray-400 mb-1">Are you a boy?</span>
+          <a
+            href="/marriageguy"
+            className="text-blue-300 underline hover:text-blue-400 transition-colors text-sm"
+          >
+            Take the boy test here
+          </a>
+        </div>
       </main>
       <footer className="w-full text-center text-xs text-[#888] mt-12 mb-4 select-none">
         © 2025 Meme Marriage Test | All results are just for fun!

@@ -73,6 +73,16 @@ export default function Page() {
           If you're not anti-marriage, just meme-curious—tap that button. 😂
         </span>
         <StartTestButton />
+
+        <div className="mt-4 flex flex-col items-center">
+          <span className="text-base text-gray-400 mb-1">Are you a girl?</span>
+          <a
+            href="/marriagegirl"
+            className="text-pink-300 underline hover:text-pink-400 transition-colors text-sm"
+          >
+            Take the girl test here
+          </a>
+        </div>
        
       </main>
       <footer className="w-full text-center text-xs text-[#888] mt-12 mb-4 select-none">
