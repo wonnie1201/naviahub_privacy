@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-export const metadataBase = new URL("https://naviahub.dev");
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://naviahub.dev'),
   title: "Marriage Meme Test for Girls 💅 | Find Your Bridal Vibe",
   description: "Not anti-marriage — just meme-curious? Take the test made for girls who’ve planned weddings on Pinterest… for fun. 😂💍",
 
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   alternates: {
-    canonical: "https://naviahub.dev/marriagegirl",
+    canonical: "https://naviahub.dev/marriagegirl/",
   },
 };
 
