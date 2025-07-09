@@ -1,5 +1,10 @@
 import React from "react";
 
+export const metadata = {
+  title: "Privacy Policy - NAVIA",
+  description: "Read NAVIA's privacy policy to learn how we protect your personal information.",
+};
+
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-black py-16 px-4">

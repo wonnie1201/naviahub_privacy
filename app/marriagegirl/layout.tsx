@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+export const metadataBase = new URL("https://naviahub.dev");
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -12,9 +14,28 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  title: "Marriage Meme Test for Guys | naviahub.dev",
-  description: "Discover your hilarious wedding alter ego — from Meme Priest to Escape Artist. The meme-based marriage test that doesn’t take 'I do' too seriously. 💀💍",
+export const metadata: Metadata = {
+  title: "Marriage Meme Test for Girls 💅 | Find Your Bridal Vibe",
+  description: "Not anti-marriage — just meme-curious? Take the test made for girls who’ve planned weddings on Pinterest… for fun. 😂💍",
+
+  openGraph: {
+    title: "Marriage? Cute idea. But have you seen my grocery bills?",
+    description:
+      "Take the test that every 'just browsing Pinterest weddings for fun' girl needs.",
+    url: "https://naviahub.dev/marriagegirl/",
+    images: [
+      {
+        url: "https://naviahub.dev/undraw_wedding_qt3q_1200x630.png",
+        width: 1200,
+        height: 630,
+        alt: "Meme Marriage Test",
+      },
+    ],
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://naviahub.dev/marriagegirl",
+  },
 };
 
 export default function RelatableguyLayout({

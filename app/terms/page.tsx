@@ -1,5 +1,10 @@
 import React from "react";
 
+export const metadata = {
+  title: "Terms of Service - NAVIA",
+  description: "Review NAVIA's terms of service before using our website and services.",
+};
+
 export default function TermsPage() {
   return (
     <div className="min-h-screen bg-black py-16 px-4">

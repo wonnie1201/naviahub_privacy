@@ -1,5 +1,10 @@
 import React from "react";
 
+export const metadata = {
+  title: "Business Inquiries - NAVIA",
+  description: "This is NAVIA's business partnership and inquiry page.",
+};
+
 export default function BusinessPage() {
   return (
     <div className="min-h-screen bg-black py-16 px-4">
