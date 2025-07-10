@@ -3,9 +3,9 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Confetti from "react-confetti";
 import { gtag } from "@/app/util/ga";
-import Head from "next/head";
 
-const RESULTS = [
+
+export const RESULTS = [
   { type: "The Meme Priest", emoji: "🤣", percent: "Top 4%" },
   { type: "The Speed-Groom", emoji: "🚀", percent: "Top 10%" },
   { type: "The Spreadsheet Fiancé", emoji: "🧠", percent: "Top 20%" },
@@ -111,7 +111,7 @@ const TYPE_MAP = [
   [4, 2, 5, 3], // Q18
 ];
 
-function getResultFromAnswers(answers: any) {
+export function getResultFromAnswers(answers: any) {
   if (!Array.isArray(answers) || answers.length !== 18 || answers.some(a => a === null)) return null;
   const typeScores = [0,0,0,0,0,0];
   answers.forEach((ans, idx) => {
@@ -217,44 +217,40 @@ export default function ResultPage() {
   const resultPercent = result?.percent || "Top 80%";
   const resultType = result?.type || "The Ghost";
   const resultEmoji = result?.emoji || "👻";
+  const resultPraise = PRAISES[resultPercent] || "Escape Artist: you're gone before the bouquet hits the ground. Your mom's been calling since 2022.";
+  
+  // JSON-LD 스크립트를 위한 데이터 생성
+  const jsonLdData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": `${resultType} ${resultEmoji} | ${resultPercent} Meme Marriage Type`,
+    "description": `${resultPraise} Take the Marriage Meme Test and share your chaotic wedding energy!`,
+    "url": `https://naviahub.dev/marriageguy/result?type=${encodeURIComponent(resultType)}&percent=${encodeURIComponent(resultPercent)}`,
+    "image": "https://naviahub.dev/undraw_wedding_qt3q_1200x630.png",
+    "inLanguage": "en",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Men interested in memes and marriage"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "NaviaHub"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "NaviaHub",
+      "url": "https://naviahub.dev"
+    },
+    "datePublished": "2025-07-08",
+    "dateModified": "2025-07-09"
+  };
 
   return (
     <>
-      <Head>
-
-  <title>Speed-Groom 🚀 | Top 10% Meme Marriage Type 💀💍</title>
-  <link rel="canonical" href="https://naviahub.dev/marriageguy/result" />
-  <meta name="description" content="Only 10% get this! You're a Speed-Groom — fast, funny, and slightly terrified. 💀 Take the Meme Marriage Test and share your chaotic wedding energy!" />
-  <meta name="robots" content="index, follow" />
-
-  <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Speed-Groom 🚀 | Top 10% Meme Marriage Type",
-      "description": "Only 10% get this! You're a Speed-Groom — fast, funny, and slightly terrified. 💀 Take the Meme Marriage Test and share your chaotic wedding energy!",
-      "url": "https://naviahub.dev/marriageguy/result",
-      "image": "https://naviahub.dev/undraw_wedding_qt3q_1200x630.png",
-      "inLanguage": "en",
-      "audience": {
-        "@type": "Audience",
-        "audienceType": "Men interested in memes and marriage"
-      },
-      "creator": {
-        "@type": "Organization",
-        "name": "NaviaHub"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "NaviaHub",
-        "url": "https://naviahub.dev"
-      },
-      "datePublished": "2025-07-08",
-      "dateModified": "2025-07-09"
-    }
-  ` }} />
+  
+  <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }} />
       
-      </Head>
+      
       <div className="min-h-screen flex flex-col justify-center items-center bg-[#18171a] px-4">
         {showConfetti && typeof window !== "undefined" && (
           <Confetti

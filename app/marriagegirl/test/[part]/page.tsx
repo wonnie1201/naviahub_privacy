@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import Head from "next/head";
+import { RESULTS, getResultFromAnswers } from "../../result/page"; // 결과 계산을 위한 import 추가
 
 const PINK = "#ffb6d5"; // 연한 핑크
 const PINK_HOVER = "#ffc6e0";
@@ -267,10 +267,23 @@ export default function TestPage() {
   const [isBlinking, setIsBlinking] = useState(false);
 
   const handleNext = () => {
-    if (partIdx === 2) {
+    if (isSliding || isBlinking) return;
+    
+    if (partIdx === 2 && currentQuestions.every((_, idx) => answers[offset + idx] !== null)) {
       setIsBlinking(true);
       setTimeout(() => {
-        goNext();
+        // localStorage에서 최종 답변을 가져와 결과 계산
+        const finalAnswers = JSON.parse(localStorage.getItem("test-answers") || "[]");
+        const result = getResultFromAnswers(finalAnswers);
+        
+        if (result) {
+          // 결과 정보를 URL 쿼리 파라미터로 포함시킴
+          router.push(`/marriagegirl/result?type=${encodeURIComponent(result.type)}&percent=${encodeURIComponent(result.percent)}`);
+        } else {
+          // 결과가 유효하지 않을 경우 기본 결과 페이지로 이동
+          router.push("/marriagegirl/result");
+        }
+        setIsBlinking(false);
       }, 220);
     } else {
       setIsSliding(true);
@@ -283,13 +296,7 @@ export default function TestPage() {
 
   return (
     <>
-      <Head>
-        <title>Marriage Meme Test for Girls - Step ${partParam} | Discover Your Bridal Alter Ego</title>
-        <link rel="canonical" href={`https://naviahub.dev/marriagegirl/test/${partParam}`} />
-        <meta name="description" content="Marriage Meme Test in progress! 💍 Answer brutally relatable questions and reveal your bridal meme energy soon. Are you a Pinterest Bride, Panic Queen, or Commitment Ghost? 😂" />
-
-        <meta name="robots" content="index, follow" />
-    
+      
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `
       {
         "@context": "https://schema.org",
@@ -316,7 +323,6 @@ export default function TestPage() {
         "dateModified": "2025-07-09"
       }
     ` }} />
-      </Head>
       
       <div className="min-h-screen bg-[#18171a] flex flex-col items-center px-2 pb-10" style={{ color: PINK }}>
         {/* 상단 sticky 진행도 */}

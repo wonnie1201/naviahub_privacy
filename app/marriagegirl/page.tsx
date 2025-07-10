@@ -1,17 +1,11 @@
 import Image from "next/image";
 import { gtag } from "../util/ga";
 import StartTestButton from "./StartTestButton";
-import Head from "next/head";
 
 
 export default function Page() {
   return (
     <>
-    <Head>
-    <title>Marriage? Cute idea. But have you seen my grocery bills?</title>
-    <meta name="description" content="Take the test that every 'just browsing Pinterest weddings for fun' girl needs." />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://naviahub.dev/marriagegirl/" />
     
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `
       {
@@ -39,7 +33,6 @@ export default function Page() {
         "dateModified": "2025-07-09"
       }
     ` }} />
-  </Head>
 
     <div className="min-h-screen flex flex-col justify-center items-center bg-[#18171a] px-4">
       <main className="flex flex-col items-center justify-center flex-1 w-full max-w-lg mx-auto">

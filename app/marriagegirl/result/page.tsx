@@ -3,9 +3,8 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Confetti from "react-confetti";
 import { gtag } from "@/app/util/ga";
-import Head from "next/head";
 
-const RESULTS = [
+export const RESULTS = [
   { type: "The Group Chat Bride", emoji: "📱", percent: "Top 4%" },
   { type: "The Pinterest Dreamer", emoji: "💅", percent: "Top 10%" },
   { type: "The Spreadsheet Queen", emoji: "📊", percent: "Top 20%" },
@@ -15,7 +14,7 @@ const RESULTS = [
 ];
 
 const PRAISES: Record<string, string> = {
-  "Top 4%": "You're the Group Chat Bride — wedding planning *and* memes queen. Your bridal mood board is viral, and so are your reactions.",
+  "Top 4%": "You're the Group Chat Bride — wedding planning and memes queen. Your bridal mood board is viral, and so are your reactions.",
   "Top 10%": "Pinterest Dreamer — you’ve got 5 wedding boards, no date, and an eye for dreamy tablescapes. ✨ Manifesting hard.",
   "Top 20%": "Spreadsheet Queen — budgets, guest list, and vibe all color-coded. You terrify and inspire your group equally.",
   "Top 30%": "Chill Control Freak — calm on the outside, spiral planner on the inside. You act casual but need floral symmetry.",
@@ -110,7 +109,7 @@ const TYPE_MAP = [
   [1, 4, 0, 5], // Q18: 치즈 영화 반응
 ];
 
-function getResultFromAnswers(answers: any) {
+export function getResultFromAnswers(answers: any) {
   if (!Array.isArray(answers) || answers.length !== 18 || answers.some(a => a === null)) return null;
   const typeScores = [0,0,0,0,0,0];
   answers.forEach((ans, idx) => {
@@ -216,43 +215,37 @@ export default function ResultPage() {
   const resultPercent = result?.percent || "Top 80%";
   const resultType = result?.type || "The Ghost";
   const resultEmoji = result?.emoji || "👻";
+  const resultPraise = PRAISES[resultPercent] || "The Ghost of Commitment — seen wedding pics, replied 'LMAO', disappeared. You’ve been ‘thinking about it’ since 2021.";
 
+  const jsonLdData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": `${resultType} ${resultEmoji} | ${resultPercent} Meme Marriage Type`,
+    "description": `${resultPraise} Take the Marriage Meme Test and share your chaotic wedding energy!`,
+    "url": `https://naviahub.dev/marriagegirl/result?type=${encodeURIComponent(resultType)}&percent=${encodeURIComponent(resultPercent)}`,
+    "image": "https://naviahub.dev/undraw_wedding_qt3q_1200x630.png",
+    "inLanguage": "en",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Women interested in memes and marriage"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "NaviaHub"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "NaviaHub",
+      "url": "https://naviahub.dev"
+    },
+    "datePublished": "2025-07-09",
+    "dateModified": "2025-07-09"
+  };
   return (
     <>
-      <Head>
-        <title>Pinterest Bride ✨ | Top 4% Meme Marriage Type 😂💍</title>
-        <link rel="canonical" href="https://naviahub.dev/marriagegirl/result" />
-        <meta name="description" content="Only 4% got this! You're officially a Pinterest Bride — the rarest bridal meme type. 💅 Discover what it says about you and share the result!" />
-
-        <meta name="robots" content="index, follow" />
+      
   
-<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `
-      {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Pinterest Bride ✨ | Top 4% Meme Marriage Type",
-        "description": "Only 4% got this! You're officially a Pinterest Bride — the rarest bridal meme type. 💅 Discover what it says about you and share the result!",
-        "url": "https://naviahub.dev/marriagegirl/result",
-        "image": "https://naviahub.dev/undraw_wedding_qt3q_1200x630.png",
-        "inLanguage": "en",
-        "audience": {
-          "@type": "Audience",
-          "audienceType": "Women interested in memes and marriage"
-        },
-        "creator": {
-          "@type": "Organization",
-          "name": "NaviaHub"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "NaviaHub",
-          "url": "https://naviahub.dev"
-        },
-        "datePublished": "2025-07-09",
-        "dateModified": "2025-07-09"
-      }
-    ` }} />
-      </Head>
+<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }} />
 
       <div className="min-h-screen flex flex-col justify-center items-center bg-[#18171a] px-4">
         {showConfetti && typeof window !== "undefined" && (
