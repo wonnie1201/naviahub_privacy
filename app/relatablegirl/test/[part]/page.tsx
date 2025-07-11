@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
-import Head from "next/head";
 import { motion, AnimatePresence } from "framer-motion";
+import { RESULTS, getResultFromAnswers } from "../../result/page"; 
 
 const PINK = "#ffb6d5"; // 연한 핑크
 const PINK_HOVER = "#ffc6e0";
@@ -260,10 +260,23 @@ export default function TestPage() {
   };
 
   const handleNext = () => {
-    if (partIdx === 2) {
+    if (isSliding || isBlinking) return;
+    
+    if (partIdx === 2 && currentQuestions.every((_, idx) => answers[offset + idx] !== null)) {
       setIsBlinking(true);
       setTimeout(() => {
-        goNext();
+        // localStorage에서 최종 답변을 가져와 결과 계산
+        const finalAnswers = JSON.parse(localStorage.getItem("test-answers") || "[]");
+        const result = getResultFromAnswers(finalAnswers);
+        
+        if (result) {
+          // 결과 정보를 URL 쿼리 파라미터로 포함시킴
+          router.push(`/relatablegirl/result?type=${encodeURIComponent(result.type)}&percent=${encodeURIComponent(result.percent)}`);
+        } else {
+          // 결과가 유효하지 않을 경우 기본 결과 페이지로 이동
+          router.push("/relatablegirl/result");
+        }
+        setIsBlinking(false);
       }, 220);
     } else {
       setIsSliding(true);
@@ -280,10 +293,34 @@ export default function TestPage() {
 
   return (
     <>
-    <Head>
-      <link rel="canonical" href={`https://naviahub.dev/relatablegirl/test/${partParam}`} />
-      <meta name="description" content="You're halfway through the 100% Relatable Meme Dating Test for Girls! Will you end up as the Overthinker 🤯, the Group Chat Queen 💅, or the Ghost 👻? Keep going!" />
-    </Head>
+    
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Which Meme Girl Are You? 💖 Take the Ultimate Relatable Dating Test! - Step ${partParam}",
+          "description": "You're halfway through the 100% Relatable Meme Dating Test for Girls! Will you end up as the Overthinker �, the Group Chat Queen �, or the Ghost 👻? Keep going!",
+          "url": "https://naviahub.dev/relatablegirl/test/${partParam}",
+          "image": "/undraw_love_qypu_1200x630.png",
+          "inLanguage": "en",
+          "audience": {
+            "@type": "Audience",
+            "audienceType": "Meme Dating Test for Girls"
+          },
+          "creator": {
+            "@type": "Organization",
+            "name": "NaviaHub"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "NaviaHub",
+            "url": "https://naviahub.dev"
+          },
+          "datePublished": "2025-07-04",
+          "dateModified": "2025-07-11"
+        }
+      ` }} />
+
     <div className="min-h-screen bg-[#18171a] flex flex-col items-center px-2 pb-10" style={{ color: PINK }}>
       {/* 상단 sticky 진행도 */}
       <div className="w-full max-w-2xl mx-auto mt-0 sticky top-0 z-20 bg-[#18171a] shadow-md shadow-black/10" style={{ color: PINK }}>

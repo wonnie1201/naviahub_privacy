@@ -5,7 +5,7 @@ import Confetti from "react-confetti";
 import { gtag } from "@/app/util/ga";
 import Head from "next/head";
 
-const RESULTS = [
+export const RESULTS = [
   { type: "The Overthinker", emoji: "🙈", percent: "Top 4%" },
   { type: "The Group Chat Queen", emoji: "💬", percent: "Top 10%" },
   { type: "The Outfit Planner", emoji: "👗", percent: "Top 20%" },
@@ -97,7 +97,7 @@ const TYPE_MAP = [
   [4, 5, 1, 0],
 ];
 
-function getResultFromAnswers(answers: any) {
+export function getResultFromAnswers(answers: any) {
   if (!Array.isArray(answers) || answers.length !== 18 || answers.some(a => a === null)) return null;
   const typeScores = [0,0,0,0,0,0];
   answers.forEach((ans, idx) => {
@@ -201,13 +201,38 @@ export default function ResultPage() {
   const resultPercent = result?.percent || "Top 80%";
   const resultType = result?.type || "The Secret Romantic";
   const resultEmoji = result?.emoji || "💖";
+  const resultPraise = PRAISES[resultPercent] || "Group Chat Queen: You screenshotted the convo, sent it to 4 friends, overanalyzed it for 2 hours—then replied 'lol'.";
+  
+  // JSON-LD 스크립트를 위한 데이터 생성
+  const jsonLdData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": `${resultType} ${resultEmoji} | ${resultPercent} Meme Dating Type`,
+    "description": `${resultPraise} You got your result! Are you the Overthinker 🤯, the Group Chat Queen 💅, or the ultimate Ghost 👻? Let the drama begin—share your vibe now!`,
+    "url": `https://naviahub.dev/relatablegirl/result?type=${encodeURIComponent(resultType)}&percent=${encodeURIComponent(resultPercent)}`,
+    "image": "/undraw_love_qypu_1200x630.png",
+    "inLanguage": "en",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Meme Dating Results for Girls"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "NaviaHub"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "NaviaHub",
+      "url": "https://naviahub.dev"
+    },
+    "datePublished": "2025-07-04",
+    "dateModified": "2025-07-11"
+  };
 
   return (
     <>
-    <Head>
-      <link rel="canonical" href="https://naviahub.dev/relatablegirl/result" />
-      <meta name="description" content="You got your result! Are you the Overthinker 🤯, the Group Chat Queen 💅, or the ultimate Ghost 👻? Let the drama begin—share your vibe now!"/>
-    </Head>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }} />
+    
     <div className="min-h-screen flex flex-col justify-center items-center bg-[#18171a] px-4">
       {showConfetti && typeof window !== "undefined" && (
         <Confetti

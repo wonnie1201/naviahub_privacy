@@ -36,6 +36,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://naviahub.dev/relatableguy/",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 };
 
 export default function RelatableguyLayout({

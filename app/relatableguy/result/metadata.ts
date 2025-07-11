@@ -5,12 +5,12 @@ import { Metadata } from 'next';
 // generateMetadata는 서버에서 실행되므로, 클라이언트 컴포넌트의 useState나 localStorage에 접근할 수 없습니다.
 // 따라서 메타데이터를 위한 별도의 데이터 소스를 가지거나, searchParams를 통해 정보를 받아와야 합니다.
 const METADATA_RESULTS_MAP = [
-  { type: "The Group Chat Bride", emoji: "📱", percent: "Top 4%", praise: "You're the Group Chat Bride — wedding planning and memes queen. Your bridal mood board is viral, and so are your reactions" },
-  { type: "The Pinterest Dreamer", emoji: "💅", percent: "Top 10%", praise: "Pinterest Dreamer — you’ve got 5 wedding boards, no date, and an eye for dreamy tablescapes. ✨ Manifesting hard." },
-  { type: "The Spreadsheet Queen", emoji: "📊", percent: "Top 20%", praise: "Spreadsheet Queen — budgets, guest list, and vibe all color-coded. You terrify and inspire your group equally." },
-  { type: "The Chill Control Freak", emoji: "😎", percent: "Top 30%", praise: "Chill Control Freak — calm on the outside, spiral planner on the inside. You act casual but need floral symmetry.." },
-  { type: "The Maybe Girl", emoji: "🤷‍♀️", percent: "Top 50%", praise: "The Maybe Girl. You’re open to love, but also open to snacks and sleep. Marriage? We'll circle back." },
-  { type: "The Ghost of Commitment", emoji: "👻", percent: "Top 80%", praise: "The Ghost of Commitment — seen wedding pics, replied 'LMAO', disappeared. You’ve been ‘thinking about it’ since 2021." },
+  { type: "The Comedian", emoji: "🤣", percent: "Top 4%", praise: "Legendary! You're the rarest meme lord. Everyone wants you in their group chat" },
+  { type: "The Rusher", emoji: "🚀", percent: "Top 10%", praise: "Certified MVP! You're the guy everyone screenshots for advice." },
+  { type: "The Strategist", emoji: "🧠", percent: "Top 20%", praise: "Elite! Your meme game is strong. People wish they could be you." },
+  { type: "The Observer", emoji: "👀", percent: "Top 30%", praise: "Not bad! But you're still lurking in the group chat, aren't you?" },
+  { type: "The Simp", emoji: "🥲", percent: "Top 50%", praise: "Classic. You're the average meme enjoyer. Maybe try shooting your shot next time?" },
+  { type: "The Ghost", emoji: "👻", percent: "Top 80%", praise: "Bruh… You're basically a ghost. Your friends are still waiting for your reply." },
 ];
 
 // generateMetadata 함수에 전달될 props 타입 정의
@@ -28,16 +28,16 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   );
 
   // 기본 메타데이터 값 (URL 파라미터가 없거나 일치하는 결과가 없을 경우)
-  const defaultTitle = "Pinterest Bride ✨ | Top 4% Meme Marriage Type 😂💍";
-  const defaultDescription = "Only 4% got this! You're officially a Pinterest Bride — the rarest bridal meme type. 💅 Discover what it says about you and share the result!";
-  const defaultUrl = "https://naviahub.dev/marriagegirl/result";
-  const defaultImage = "https://naviahub.dev/undraw_wedding_qt3q_1200x630.png"; // page.tsx의 JSON-LD에 있는 이미지 URL
+  const defaultTitle = "Why Are You Still Single, Bro? 😂 ";
+  const defaultDescription = "Your dating meme type has been revealed! Discover if you're a Comedian 🤣, a Rusher 🚀, or a Ghost 👻 — and share the laughs with friends.";
+  const defaultUrl = "https://naviahub.dev/relatableguy/result";
+  const defaultImage = "/undraw_love_qypu_1200x630.png"; // page.tsx의 JSON-LD에 있는 이미지 URL
 
   // 결과 데이터에 따라 동적으로 제목, 설명, URL 등을 설정합니다.
-  const title = resultData ? `${resultData.type} ${resultData.emoji} | ${resultData.percent} Meme Marriage Type 💀💍` : defaultTitle;
+  const title = resultData ? `${resultData.type} ${resultData.emoji} | ${resultData.percent} Meme Dating Type 💀` : defaultTitle;
   const description = resultData ? resultData.praise : defaultDescription;
   // URL에 쿼리 파라미터를 포함하여 정규 URL(canonical URL)을 설정합니다.
-  const canonicalUrl = resultData ? `https://naviahub.dev/marriagegirl/result?type=${encodeURIComponent(resultData.type)}&percent=${encodeURIComponent(resultData.percent)}` : defaultUrl;
+  const canonicalUrl = resultData ? `https://naviahub.dev/relatableguy/result?type=${encodeURIComponent(resultData.type)}&percent=${encodeURIComponent(resultData.percent)}` : defaultUrl;
   
   // 만약 결과 유형별로 다른 공유 이미지가 있다면 여기서 imageUrl을 동적으로 설정합니다.
   // 예: const imageUrl = resultData ? `/images/results/${resultData.type.replace(/ /g, '-')}.png` : defaultImage;
@@ -62,7 +62,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
           url: imageUrl,
           width: 1200,
           height: 630,
-          alt: resultData ? `${resultData.type} Result` : "Marriage Meme Test Result",
+          alt: resultData ? `${resultData.type} Result` : "Meme Dating Results for Guys",
         },
       ],
       type: "website",

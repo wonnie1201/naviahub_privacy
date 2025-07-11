@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
-import Head from "next/head";
 import { motion, AnimatePresence } from "framer-motion";
+import { RESULTS, getResultFromAnswers } from "../../result/page"; 
 
 const PINK = "#ffb6d5"; // 연한 핑크
 const PINK_HOVER = "#ffc6e0";
@@ -260,10 +260,23 @@ export default function TestPage() {
   };
 
   const handleNext = () => {
-    if (partIdx === 2) {
+    if (isSliding || isBlinking) return;
+    
+    if (partIdx === 2 && currentQuestions.every((_, idx) => answers[offset + idx] !== null)) {
       setIsBlinking(true);
       setTimeout(() => {
-        goNext();
+        // localStorage에서 최종 답변을 가져와 결과 계산
+        const finalAnswers = JSON.parse(localStorage.getItem("test-answers") || "[]");
+        const result = getResultFromAnswers(finalAnswers);
+        
+        if (result) {
+          // 결과 정보를 URL 쿼리 파라미터로 포함시킴
+          router.push(`/relatableguy/result?type=${encodeURIComponent(result.type)}&percent=${encodeURIComponent(result.percent)}`);
+        } else {
+          // 결과가 유효하지 않을 경우 기본 결과 페이지로 이동
+          router.push("/relatableguy/result");
+        }
+        setIsBlinking(false);
       }, 220);
     } else {
       setIsSliding(true);
@@ -280,10 +293,32 @@ export default function TestPage() {
 
   return (
     <>
-    <Head>
-      <link rel="canonical" href={`https://naviahub.dev/relatableguy/test/${partParam}`} />
-      <meta name="description" content="You're taking the 100% Relatable Meme Dating Test for Guys! Keep answering to see if you're a Comedian, a Rusher, or a Ghost. 😂💔" />
-    </Head>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Why Are You Still Single, Bro? 😂 Meme Dating Test for Guys - Step ${partParam}",
+          "description": "Your dating meme type has been revealed! Discover if you're a Comedian 🤣, a Rusher 🚀, or a Ghost 👻 — and share the laughs with friends",
+          "url": "https://naviahub.dev/relatableguy/",
+          "image": "/undraw_love_qypu_1200x630.png",
+          "inLanguage": "en",
+          "audience": {
+            "@type": "Audience",
+            "audienceType": "Meme Dating Test for Guys"
+          },
+          "creator": {
+            "@type": "Organization",
+            "name": "NaviaHub"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "NaviaHub",
+            "url": "https://naviahub.dev"
+          },
+          "datePublished": "2025-07-03",
+          "dateModified": "2025-07-10"
+        }
+      ` }} />
     
     <div className="min-h-screen bg-[#18171a] flex flex-col items-center px-2 pb-10" style={{ color: PINK }}>
       {/* 상단 sticky 진행도 */}

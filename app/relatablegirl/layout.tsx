@@ -15,13 +15,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://naviahub.dev'),
-  title: "Why Am I Still Single? 💅 Meme Dating Test for Girls",
-  description: "Is it you, them, or just the algorithm? Take the viral meme test and find out your dating vibe. Overthinker? Ghost? Group Chat Queen? 😂💔",
+  title: "Which Meme Girl Are You? 💖 Take the Ultimate Relatable Dating Test!",
+  description: "For girls only! Are you the Overthinker 🙈, the Group Chat Queen 💬, or the Outfit Planner 👗? Discover your dating meme type in 2 minutes!",
 
   openGraph: {
-    title: "Still Single? Your Dating Meme Type Awaits 👀💔",
+    title: "Which Meme Girl Are You? 💖 Take the Ultimate Relatable Dating Test!",
     description:
-      "Take the viral meme test that everyone’s sharing. Are you a Ghost, an Overthinker, or the Group Chat Queen? Let’s find out. 😂",
+      "For girls only! Are you the Overthinker 🙈, the Group Chat Queen 💬, or the Outfit Planner 👗? Discover your dating meme type in 2 minutes!",
     url: "https://naviahub.dev/relatablegirl/",
     images: [
       {
@@ -35,6 +35,14 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://naviahub.dev/relatablegirl/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 };
 

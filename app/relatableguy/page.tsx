@@ -2,30 +2,37 @@ import Image from "next/image";
 import { gtag } from "../util/ga";
 import StartTestButton from "./StartTestButton";
 
-export const metadata = {
-  title: "Which Meme Guy Are You? 😂 Find Out in the 100% Relatable Dating Test!",
-  description: "For guys only! Are you the Ghost 👻, the Simp 🥲, or the Meme Lord 🤣? Discover your dating meme type in 2 minutes!",
-  openGraph: {
-    title: "Which Meme Guy Are You? 😂 Find Out in the 100% Relatable Dating Test!",
-    description: "For guys only! Are you the Ghost 👻, the Simp 🥲, or the Meme Lord 🤣? Discover your dating meme type in 2 minutes!",
-    url: "https://naviahub.dev/relatableguy/",
-    images: [
-      {
-        url: "/undraw_love_qypu_1200x630.png",
-        width: 1200,
-        height: 630,
-        alt: "Meme Dating Test for Guys",
-      },
-    ],
-    type: "website",
-  },
-  alternates: {
-    canonical: "https://naviahub.dev/relatableguy/",
-  },
-};
+
 
 export default function Page() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Why Are You Still Single, Bro? 😂 Meme Dating Test for Guys",
+          "description": "Is it your texts, your timing, or just bad Wi-Fi? Find out your meme-level dating type — from Ghost 👻 to Simp 🥲 to Meme Lord 🤣 — in this 2-minute viral test.",
+          "url": "https://naviahub.dev/relatableguy/",
+          "image": "/undraw_love_qypu_1200x630.png",
+          "inLanguage": "en",
+          "audience": {
+            "@type": "Audience",
+            "audienceType": "Meme Dating Test for Guys"
+          },
+          "creator": {
+            "@type": "Organization",
+            "name": "NaviaHub"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "NaviaHub",
+            "url": "https://naviahub.dev"
+          },
+          "datePublished": "2025-07-03",
+          "dateModified": "2025-07-10"
+        }
+      ` }} />
     <div className="min-h-screen flex flex-col justify-center items-center bg-[#18171a] px-4">
       <main className="flex flex-col items-center justify-center flex-1 w-full max-w-lg mx-auto">
         <div className="mb-6">
@@ -76,5 +83,6 @@ export default function Page() {
         © 2025 Meme Dating Test | All results are just for fun!
       </footer>
     </div>
+    </>
   );
 }
